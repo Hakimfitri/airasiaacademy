@@ -18,15 +18,7 @@ def user_input_features():
     data = {'TV': TV,
             'Radio': Radio,
             'Newspaper': Newspaper,
-            'MissingFeature': MissingFeature
             }
-    features = pd.DataFrame(data, index=[0])
-    
-    # Drop the 'MissingFeature' column
-    features = features.drop('MissingFeature', axis=1)
-    
-    return features
-
 df = user_input_features()
 
 st.subheader('User Input parameters')
