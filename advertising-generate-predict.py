@@ -21,6 +21,10 @@ def user_input_features():
             'MissingFeature': MissingFeature
             }
     features = pd.DataFrame(data, index=[0])
+    
+    # Drop the 'MissingFeature' column
+    features = features.drop('MissingFeature', axis=1)
+    
     return features
 
 df = user_input_features()
