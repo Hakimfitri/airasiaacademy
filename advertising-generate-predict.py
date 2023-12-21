@@ -19,6 +19,8 @@ def user_input_features():
             'Radio': Radio,
             'Newspaper': Newspaper,
             }
+    return data
+
 df = user_input_features()
 
 st.subheader('User Input parameters')
@@ -31,7 +33,7 @@ try:
         loaded_model = pickle.load(file)
 
     # Ensure df is a 2D array for prediction
-    prediction = loaded_model.predict(df.values)
+    prediction = loaded_model.predict(pd.DataFrame(df, index=[0]).values)
     
     st.subheader('Prediction')
     st.write(prediction)
